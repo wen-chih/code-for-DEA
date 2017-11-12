@@ -15,7 +15,7 @@ function outlierDetection()
     # ---------------------------------
     # read data from a csv file
     println(">> read data")
-    data = readcsv("data.csv") # input User's (.csv) data path
+    data = readcsv("outlierExample.csv") # input User's (.csv) data path
     # each row is for a DMU; each column is an input or output
 
     # you need to set the inputNo correspondingly
@@ -41,7 +41,7 @@ function outlierDetection()
     # outerImpact, innerImpact, outerImpactNo, innerImpactNo = getDeltaOnX(inputs, outputs)
     # totalImpact = outerImpact + innerImpact # eq. (15)
 
-    # output section: export reslts to output.csv 
+    # output section: export reslts to output.csv
     writeResult("output.csv", [collect(1:scale)';outerImpact'; outerImpactNo'; innerImpact'; innerImpactNo']')
 
     println("done!")
